@@ -1,18 +1,13 @@
 import "./css/main.css"
+import "./css/global.css"
+import Chat from "./components/Chat"
 
 export default function Home() {
   return (
     <main className="main" >
-      <section className="main-container" >
-        <h1 className="title" >public chat</h1>
 
-        <div className="chat-container" >
-
-        </div>
-
-        <input type="text" className="chat-input" />
-
-      </section>
+      <Chat />
+      
     </main>
   )
 }
