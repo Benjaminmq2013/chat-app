@@ -5,15 +5,25 @@ import sendMessage, { messageModel } from "../utils/sendMessage"
 
 const Chat = () => {
 
+    let userPlatform: string = "Anónimo";
+    typeof navigator !== "undefined" && (userPlatform = navigator.platform);    
+
     const [ message, setMessage ] = useState<messageModel>({
         id: "123455",
         message: "",
-        user: navigator.platform || "Anónimo",
+        user: userPlatform,
         color: "blue"
     })
     
-    const handleSubmit = ():void => {
+    const handleSubmit = (e:React.FormEvent<HTMLFormElement>):void => {
+        e.preventDefault()
+
         sendMessage(message)
+
+        setMessage({
+            ...message,
+            message: ""
+        })
     }
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,13 +43,13 @@ const Chat = () => {
             <div className="chat-message message-left">Message3</div>
         </div>
 
-        <form className="chat-controls" onSubmit={ handleSubmit } >
-            <input type="text" className="chat-input" onChange={ (e: React.ChangeEvent<HTMLInputElement>) => handleInputChange(e) } />
-            <button>Enviar</button>
+        <form className="chat-controls" onSubmit={ (e:React.FormEvent<HTMLFormElement>)=> handleSubmit(e) } >
+            <input type="text" className="chat-input" value={ message.message } onChange={ (e: React.ChangeEvent<HTMLInputElement>) => handleInputChange(e) } />
+            <input type="submit" value="Enviar" />
         </form>
 
       </section>
   )
 }
 
-export default Chat
+export default Chat;
