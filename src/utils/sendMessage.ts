@@ -1,9 +1,4 @@
-export interface messageModel {
-    id: string,
-    message: string,
-    color: string,
-    user: string,
-}
+import { messageModel } from "@/interfaces/messageModel";
 
 
 const sendMessage = (message:messageModel) => {
