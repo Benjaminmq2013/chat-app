@@ -4,10 +4,3 @@ export interface messageModel {
     color: string,
     user: string,
 }
-
-
-const sendMessage = (message:messageModel) => {
-    
-}
-
-export default sendMessage;

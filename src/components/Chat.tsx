@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react'
-import sendMessage, { messageModel } from "../utils/sendMessage"
+import sendMessage  from "../utils/sendMessage"
+import { messageModel } from "../interfaces/message"
 
 
 const Chat = () => {
