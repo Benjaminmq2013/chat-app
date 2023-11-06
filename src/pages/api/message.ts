@@ -2,7 +2,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import { messageModel } from '@/interfaces/messageModel'
-import getMessages from '../controller/getMessage'
+import getMessages from '../../controller/getMessage'
 
 export default async function handler(
   req: NextApiRequest,
