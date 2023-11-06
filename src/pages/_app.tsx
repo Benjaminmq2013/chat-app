@@ -1,5 +1,6 @@
 
 import "../css/main.scss"
+import "../css/gamepad.scss"
 import "../css/global.scss"
 
 import type { AppProps } from 'next/app'

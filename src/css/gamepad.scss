@@ -1,0 +1,17 @@
+.gamepad-ui {
+    padding: 0 20px;
+
+    h1 {
+        text-align: center;
+    }
+
+    .gamepad-btn {
+        border: 2px solid transparent;
+        border-radius: 4px;
+        margin: 0 2px;
+    }
+
+    .durationBtnSelected {
+        border: 2px solid rgb(25, 182, 255) ;
+    }
+}
